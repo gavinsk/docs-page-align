@@ -51,3 +51,7 @@ All Google Docs selectors are in the `SEL` object at the top of `extension/conte
 
 - Dragging ruler indent/margin markers isn't position-corrected.
 - Google can change Docs' internal class names at any time, which may require updating the selectors.
+
+## License
+
+[MIT](LICENSE)
