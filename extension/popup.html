@@ -22,12 +22,15 @@
     .seg.disabled { opacity: .4; pointer-events: none; }
     #alignNote:empty { display: none; }
     .note { color: var(--muted); font-size: 11px; margin-top: 10px; }
+    .check { margin-top: 12px; cursor: pointer; }
+    .check[hidden] { display: none; }
+    .check input { margin: 0; accent-color: var(--accent); }
   </style>
 </head>
 <body>
   <h1>Docs Page Align</h1>
 
-  <p class="label">Page position (this Doc only)</p>
+  <p class="label" id="alignLabel">Page position (this Doc only)</p>
   <div class="seg" id="align">
     <label><input type="radio" name="align" value="left"><span>Left</span></label>
     <label><input type="radio" name="align" value="center"><span>Center</span></label>
@@ -41,7 +44,9 @@
     <input type="number" id="gapNum" min="0" max="2000" step="1">
   </div>
 
-  <p class="note">New Docs open centered. Applies only in Pages layout. The gap applies to all Docs.</p>
+  <label class="row check" id="whiteRow" hidden><input type="checkbox" id="whiteBg"> White background around the slide</label>
+
+  <p class="note" id="footNote">New Docs open centered. Applies only in Pages layout. The gap applies to all Docs.</p>
 
   <script src="popup.js"></script>
 </body>

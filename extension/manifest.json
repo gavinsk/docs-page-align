@@ -1,13 +1,18 @@
 {
   "manifest_version": 3,
   "name": "Docs Page Align",
-  "version": "1.0.0",
-  "description": "Moves the Google Docs page to the left or right side of the window, leaving blank space for annotating.",
+  "version": "1.1.0",
+  "description": "Moves the Google Docs page, or a Google Slides slideshow, to the left or right side of the window, leaving blank space for annotating.",
   "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": ["https://docs.google.com/document/*"],
       "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://docs.google.com/presentation/*"],
+      "js": ["slides.js"],
       "run_at": "document_idle"
     }
   ],
